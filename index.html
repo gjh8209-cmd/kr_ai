@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>대한민국 AI 정책 일보 (THE KOREA AI CHRONICLE) - 1면 특집호</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Google Fonts: Serif & Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,400;1,700&family=Noto+Serif+KR:wght@300;400;500;600;700;900&family=Pretendard:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Nanum Myeongjo', 'Noto Serif KR', 'Playfair Display', 'serif'],
+            display: ['Playfair Display', 'Nanum Myeongjo', 'serif'],
+            sans: ['Pretendard', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Nanum Myeongjo', 'Noto Serif KR', serif;
+      background-color: #EFEAE2;
+      color: #111111;
+      background-image: radial-gradient(#d1c7ba 0.8px, transparent 0.8px);
+      background-size: 14px 14px;
+    }
+    .newspaper-border-double {
+      border-top: 4px double #111111;
+      border-bottom: 4px double #111111;
+    }
+    .newspaper-border-thick {
+      border-bottom: 3px solid #111111;
+    }
+    .column-rule-r {
+      border-right: 1px solid #D5CCC1;
+    }
+    .column-rule-l {
+      border-left: 1px solid #D5CCC1;
+    }
+    .drop-cap::first-letter {
+      font-family: 'Playfair Display', 'Nanum Myeongjo', serif;
+      font-size: 3.8rem;
+      line-height: 0.8;
+      float: left;
+      padding-top: 4px;
+      padding-right: 8px;
+      padding-bottom: 2px;
+      font-weight: 900;
+      color: #000;
+    }
+    .news-photo-frame {
+      border: 1px solid #111;
+      padding: 3px;
+      background-color: #fff;
+    }
+    .halftone-effect {
+      filter: grayscale(100%) contrast(140%) brightness(95%);
+    }
+    .halftone-effect:hover {
+      filter: grayscale(80%) contrast(125%) brightness(98%);
+      transition: filter 0.3s ease;
+    }
+  </style>
+</head>
+<body class="min-h-screen selection:bg-neutral-900 selection:text-white p-2 sm:p-5 lg:p-8">
+
+  <!-- Main Newspaper Wrapper (Broadsheet Paper Effect) -->
+  <main class="max-w-6xl mx-auto bg-[#FBF9F5] shadow-2xl border-2 border-neutral-900 px-4 sm:px-10 py-7 transition-all">
+
+    <!-- TOP HEADER: Issue Metadata & Weather/Index -->
+    <div class="flex flex-col sm:flex-row justify-between items-center text-xs border-b border-neutral-900 pb-2 mb-3 font-sans text-neutral-800 tracking-wider">
+      <div class="flex items-center gap-2">
+        <span class="font-extrabold text-neutral-950 px-1.5 py-0.5 bg-neutral-900 text-white text-[11px]">호외 / 特輯</span>
+        <span class="font-bold">제 2026-0921호</span>
+        <span>•</span>
+        <span>2026년 9월 21일 월요일</span>
+      </div>
+      <div class="flex items-center gap-3 mt-1 sm:mt-0 font-serif italic text-neutral-700">
+        <span>SEOUL, REPUBLIC OF KOREA</span>
+        <span>•</span>
+        <span class="font-semibold not-italic">발행 : 과학기술정보통신부 · 국가인공지능전략위원회</span>
+      </div>
+    </div>
+
+    <!-- MASTHEAD / TITLE -->
+    <header class="text-center py-4 border-b-2 border-neutral-950">
+      <div class="text-[11px] uppercase tracking-[0.35em] font-sans font-bold text-neutral-600 mb-1">
+        The Republic of Korea AI Policy Chronicle • Vol. 1
+      </div>
+      <h1 class="font-serif text-4xl sm:text-6xl lg:text-7.5xl font-black tracking-tighter text-neutral-950 leading-none my-1">
+        大韓民國 人工知能日報
+      </h1>
+      <p class="font-serif italic text-xs sm:text-base text-neutral-800 tracking-widest mt-2">
+        “신뢰와 혁신으로 세계를 선도하는 글로벌 AI 3대 강국(G3) 도약의 기록”
+      </p>
+    </header>
+
+    <!-- SECTION RIBBON (Page Index) -->
+    <div class="newspaper-border-double py-2 my-3 flex flex-wrap justify-around items-center text-xs sm:text-sm font-sans font-bold tracking-wide text-neutral-900 gap-y-1 bg-[#F5EFEB]">
+      <a href="#headline" class="hover:underline">【 1면 머리기사 】 국가 AI 대전환 선언</a>
+      <span class="text-neutral-400 hidden sm:inline">|</span>
+      <a href="#governance" class="hover:underline">【 2면 거버넌스 】 국가AI전략위 출범</a>
+      <span class="text-neutral-400 hidden sm:inline">|</span>
+      <a href="#act" class="hover:underline">【 3면 입법현장 】 인공지능기본법 해설</a>
+      <span class="text-neutral-400 hidden sm:inline">|</span>
+      <a href="#pillars" class="hover:underline">【 4면 산업특집 】 5대 인프라 프로젝트</a>
+    </div>
+
+    <!-- MAIN FRONT PAGE LAYOUT (Broadsheet 3-Column / Multi-Row Grid) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-2 pb-6 border-b-2 border-neutral-900">
+      
+      <!-- ================= LEFT COLUMN: BIG NEWS & PHOTOS (7 cols) ================= -->
+      <article id="headline" class="lg:col-span-7 column-rule-r pr-0 lg:pr-6">
+        
+        <!-- Main Headline -->
+        <div class="mb-4">
+          <span class="inline-block px-2.5 py-0.5 bg-neutral-900 text-white text-[11px] font-sans font-bold uppercase tracking-wider mb-2">
+            1면 종합 TOP STORY
+          </span>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-neutral-950 leading-[1.15] font-serif">
+            “대한민국, 범국가 역량 결집해<br>
+            글로벌 AI 3대 강국(G3) 직행”
+          </h2>
+          <p class="font-serif italic text-sm sm:text-base text-neutral-700 mt-2">
+            대통령 직속 '국가인공지능전략위원회' 공식 출범과 「인공지능기본법」 본격 시행으로 맞이한 산업·사회 전면 대전환
+          </p>
+        </div>
+
+        <!-- Hero Photograph with Caption -->
+        <figure class="my-4">
+          <div class="news-photo-frame">
+            <img 
+              src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80" 
+              alt="국가인공지능전략위원회 정책 회의 현장" 
+              class="w-full h-64 sm:h-80 object-cover halftone-effect"
+            >
+          </div>
+          <figcaption class="text-[11px] font-sans text-neutral-700 mt-1.5 flex justify-between items-center italic border-b border-neutral-300 pb-1">
+            <span>▲ [보도사진] 국가인공지능전략위원회 총괄 회의에서 범정부 AI 대전환 추진 계획이 논의되고 있다.</span>
+            <span class="font-serif not-italic text-neutral-500 text-[10px]">사진=청와대·공동취재단</span>
+          </figcaption>
+        </figure>
+
+        <!-- Lead Story Text in 2 sub-columns -->
+        <div class="grid sm:grid-cols-2 gap-4 text-neutral-800 text-xs sm:text-sm leading-relaxed text-justify mt-3 font-serif">
+          <div>
+            <p class="drop-cap">
+              대한민국이 전 세계 인공지능(AI) 패권 경쟁 속에서 국가의 명운을 건 종합 혁신 전략을 가동했다. 정부는 대통령이 직접 위원장을 맡는 <strong>‘국가인공지능전략위원회’</strong>를 법정 기구로 공식화하고, 제도적 불확실성을 걷어낸 <strong>「인공지능기본법」</strong>을 본격 시행하며 민·관 원팀 체제를 완성했다.
+            </p>
+          </div>
+          <div>
+            <p>
+              이번 정책 드라이브의 핵심은 '국가 전반의 AI 대전환(AX)'이다. 제조, 의료, 바이오, 금융, 국방 등 대한민국의 주력 산업 전반에 국산 파운데이션 모델과 독자적인 AI 반도체 생태계를 전격 이식하여 2030년까지 잠재성장률 반등을 견인한다는 구상이다.
+            </p>
+            <div class="mt-3 p-2.5 bg-[#F1EBE2] border-l-2 border-neutral-900 text-xs">
+              <strong class="font-sans font-bold text-neutral-950">■ 주요 골자 :</strong>
+              <span class="text-neutral-700"> 국가 AI 컴퓨팅 센터 가동, K-클라우드 국산 NPU 실증, 고영향 AI 안전망 구축.</span>
+            </div>
+          </div>
+        </div>
+
+      </article>
+
+      <!-- ================= RIGHT COLUMN: SUB-STORIES & DATA (5 cols) ================= -->
+      <aside class="lg:col-span-5 flex flex-col justify-between pl-0 lg:pl-2">
+        
+        <!-- Story A: High-Tech Data Center / GPU (With Photo) -->
+        <div id="act" class="border-b border-neutral-400 pb-4 mb-4">
+          <div class="flex items-center justify-between mb-1.5">
+            <span class="text-[11px] font-sans font-bold bg-neutral-900 text-white px-2 py-0.5">인프라 현장</span>
+            <span class="text-[11px] font-sans font-semibold text-neutral-600">초고성능 연산망</span>
+          </div>
+          <h3 class="text-xl font-bold font-serif text-neutral-950 mb-2 leading-snug">
+            ‘국가 AI 컴퓨팅 센터’ 구축 가속<br>
+            민·관 합작 대규모 GPU 공급
+          </h3>
+
+          <figure class="my-2.5">
+            <div class="news-photo-frame">
+              <img 
+                src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80" 
+                alt="초거대 AI 데이터센터 인프라" 
+                class="w-full h-44 object-cover halftone-effect"
+              >
+            </div>
+            <figcaption class="text-[10px] font-sans text-neutral-600 mt-1 italic">
+              ▲ [자료사진] 국내 스타트업과 학계에 개방되는 차세대 고성능 AI 데이터센터 서버 랙.
+            </figcaption>
+          </figure>
+
+          <p class="text-xs text-neutral-700 leading-relaxed text-justify font-serif">
+            글로벌 AI 경쟁의 승부처인 컴퓨팅 파워를 정부와 민간이 공동 확보한다. 2030년까지 연산 역량을 10배 확충하여 국내 연구진의 글로벌 경쟁력을 실질적으로 뒷받침한다.
+          </p>
+        </div>
+
+        <!-- Story B: Key Indicators Infographic Table -->
+        <div class="border-2 border-neutral-950 p-4 bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] mb-4">
+          <div class="text-center border-b border-neutral-900 pb-1.5 mb-2.5">
+            <span class="text-xs font-sans font-extrabold tracking-wider text-neutral-950 uppercase">
+              ★ 2030 대한민국 AI 목표 지표 (대외 발표)
+            </span>
+          </div>
+          <table class="w-full text-xs font-serif">
+            <tbody>
+              <tr class="border-b border-dashed border-neutral-300">
+                <td class="py-1.5 font-bold text-neutral-800">국가 AI 글로벌 순위</td>
+                <td class="py-1.5 text-right font-sans font-black text-sm text-neutral-950">세계 TOP 3</td>
+              </tr>
+              <tr class="border-b border-dashed border-neutral-300">
+                <td class="py-1.5 font-bold text-neutral-800">산업 AI 도입률 (AX)</td>
+                <td class="py-1.5 text-right font-sans font-black text-sm text-neutral-950">70% 이상 달성</td>
+              </tr>
+              <tr class="border-b border-dashed border-neutral-300">
+                <td class="py-1.5 font-bold text-neutral-800">국산 AI 반도체 점유율</td>
+                <td class="py-1.5 text-right font-sans font-black text-sm text-neutral-950">K-NPU 풀스택</td>
+              </tr>
+              <tr>
+                <td class="py-1.5 font-bold text-neutral-800">고급 핵심 AI 인재</td>
+                <td class="py-1.5 text-right font-sans font-black text-sm text-neutral-950">100,000명 양성</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Story C: AI Safety Institute (With Photo) -->
+        <div>
+          <div class="flex items-center gap-2 mb-1.5">
+            <span class="text-[11px] font-sans font-bold bg-neutral-200 text-neutral-900 px-2 py-0.5 border border-neutral-900">안전 기획</span>
+            <span class="text-[11px] font-sans font-semibold text-neutral-600">AI 안전연구소 (AISI)</span>
+          </div>
+          <h4 class="text-lg font-bold font-serif text-neutral-950 mb-1 leading-snug">
+            딥페이크·오남용 선제 차단망 구축
+          </h4>
+          <p class="text-xs text-neutral-700 leading-relaxed text-justify font-serif">
+            인공지능기본법에 따라 생성형 AI 워터마크 표시가 제도화되며, AI 안전연구소가 첨단 모델의 위험성을 상시 평가한다.
+          </p>
+        </div>
+
+      </aside>
+
+    </div>
+
+    <!-- ================= SECTION 2: 5 PILLARS INVESTIGATION (4 Columns) ================= -->
+    <section id="pillars" class="py-6 border-b-2 border-neutral-900">
+      <div class="text-center mb-6">
+        <div class="text-[11px] uppercase tracking-widest font-sans font-bold text-neutral-600 mb-1">
+          SPECIAL FOCUS • 4면 정책 심층 분석
+        </div>
+        <h3 class="text-2xl sm:text-3xl font-black font-serif text-neutral-950">
+          대한민국 산업 지형을 바꿀 5대 핵심 인프라 프로젝트
+        </h3>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        
+        <!-- Pillar 1 -->
+        <div class="border border-neutral-900 p-3.5 bg-white flex flex-col justify-between">
+          <div>
+            <div class="text-[10px] font-bold font-sans px-1.5 py-0.5 bg-neutral-900 text-white inline-block mb-2">01. 연산 인프라</div>
+            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=400&q=80" alt="GPU" class="w-full h-24 object-cover halftone-effect mb-2 border border-neutral-300">
+            <h4 class="font-bold font-serif text-sm text-neutral-950 mb-1">AI 컴퓨팅 센터</h4>
+            <p class="text-[11px] text-neutral-700 leading-relaxed text-justify">
+              첨단 GPU 풀을 확보해 국내 벤처·연구소에 합리적 비용으로 즉각 공급.
+            </p>
+          </div>
+          <div class="mt-3 pt-1.5 border-t border-neutral-200 text-[10px] font-sans font-bold text-neutral-900">
+            ▶ 연산 자원 10배 공급
+          </div>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="border border-neutral-900 p-3.5 bg-white flex flex-col justify-between">
+          <div>
+            <div class="text-[10px] font-bold font-sans px-1.5 py-0.5 bg-neutral-900 text-white inline-block mb-2">02. 반도체 자립</div>
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=80" alt="AI Chip" class="w-full h-24 object-cover halftone-effect mb-2 border border-neutral-300">
+            <h4 class="font-bold font-serif text-sm text-neutral-950 mb-1">K-클라우드 NPU</h4>
+            <p class="text-[11px] text-neutral-700 leading-relaxed text-justify">
+              세계 최고 수준 저전력 국산 NPU/PIM 실증으로 독자 반도체 생태계 완성.
+            </p>
+          </div>
+          <div class="mt-3 pt-1.5 border-t border-neutral-200 text-[10px] font-sans font-bold text-neutral-900">
+            ▶ 국산 NPU 비중 확대
+          </div>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="border border-neutral-900 p-3.5 bg-white flex flex-col justify-between">
+          <div>
+            <div class="text-[10px] font-bold font-sans px-1.5 py-0.5 bg-neutral-900 text-white inline-block mb-2">03. 산업 융합</div>
+            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=400&q=80" alt="Robot" class="w-full h-24 object-cover halftone-effect mb-2 border border-neutral-300">
+            <h4 class="font-bold font-serif text-sm text-neutral-950 mb-1">전 산업 AX 대전환</h4>
+            <p class="text-[11px] text-neutral-700 leading-relaxed text-justify">
+              제조, 의료, 물류, 국방에 온디바이스 AI 및 특화 LLM을 전면 도입.
+            </p>
+          </div>
+          <div class="mt-3 pt-1.5 border-t border-neutral-200 text-[10px] font-sans font-bold text-neutral-900">
+            ▶ 생산성 30% 혁신
+          </div>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div class="border border-neutral-900 p-3.5 bg-white flex flex-col justify-between">
+          <div>
+            <div class="text-[10px] font-bold font-sans px-1.5 py-0.5 bg-neutral-900 text-white inline-block mb-2">04. 신뢰 & 안전</div>
+            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=400&q=80" alt="Security" class="w-full h-24 object-cover halftone-effect mb-2 border border-neutral-300">
+            <h4 class="font-bold font-serif text-sm text-neutral-950 mb-1">AI 안전연구소</h4>
+            <p class="text-[11px] text-neutral-700 leading-relaxed text-justify">
+              고위험 파운데이션 모델의 잠재적 위험성 평가 및 안전 네트워크 주도.
+            </p>
+          </div>
+          <div class="mt-3 pt-1.5 border-t border-neutral-200 text-[10px] font-sans font-bold text-neutral-900">
+            ▶ 글로벌 안전 공조
+          </div>
+        </div>
+
+        <!-- Pillar 5 -->
+        <div class="border border-neutral-900 p-3.5 bg-white flex flex-col justify-between">
+          <div>
+            <div class="text-[10px] font-bold font-sans px-1.5 py-0.5 bg-neutral-900 text-white inline-block mb-2">05. 글로벌 인재</div>
+            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=400&q=80" alt="Education" class="w-full h-24 object-cover halftone-effect mb-2 border border-neutral-300">
+            <h4 class="font-bold font-serif text-sm text-neutral-950 mb-1">10만 인재 양성</h4>
+            <p class="text-[11px] text-neutral-700 leading-relaxed text-justify">
+              해외 최고 석학과의 공동 연구 지원 및 AI 대학원 집중 육성.
+            </p>
+          </div>
+          <div class="mt-3 pt-1.5 border-t border-neutral-200 text-[10px] font-sans font-bold text-neutral-900">
+            ▶ 10만 핵심 인력 공급
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= SECTION 3: EDITORIAL & Q&A ================= -->
+    <section class="py-6 border-b-2 border-neutral-900">
+      <div class="grid md:grid-cols-12 gap-6">
+        
+        <!-- Editorial Opinion (4 cols) -->
+        <div class="md:col-span-4 column-rule-r pr-0 md:pr-6">
+          <div class="border-b-2 border-neutral-900 pb-1 mb-2">
+            <span class="text-xs font-serif font-black text-neutral-950 tracking-wider">【 사 설 (EDITORIAL) 】</span>
+          </div>
+          <h4 class="text-lg font-bold font-serif text-neutral-950 mb-2">
+            ‘우선 허용·사후 규제’ 정신이 국가 미래를 바꾼다
+          </h4>
+          <p class="text-xs text-neutral-700 leading-relaxed font-serif text-justify mb-3">
+            인공지능 기술의 발전 속도는 전례가 없을 정도로 빠르다. 사전 규제의 족쇄를 채우기보다, 우선 혁신을 마음껏 펼치게 한 뒤 부작용을 정밀 타격하는 한국형 법제도는 세계적 모범 사례가 될 것이다.
+          </p>
+          <p class="text-xs text-neutral-700 leading-relaxed font-serif text-justify">
+            정부와 국회는 현장의 목소리를 상시 경청하여 기업들이 글로벌 무대에서 마음껏 뛸 수 있도록 규제 샌드박스를 더욱 과감하게 열어야 한다.
+          </p>
+        </div>
+
+        <!-- Interactive Reader Q&A Accordion (8 cols) -->
+        <div class="md:col-span-8">
+          <div class="border-b-2 border-neutral-900 pb-1 mb-2 flex justify-between items-center">
+            <span class="text-xs font-serif font-black text-neutral-950 tracking-wider">【 국민·기업 질의응답 (Q&A) 】</span>
+            <span class="text-[11px] font-sans text-neutral-600">※ 클릭 시 상세 답변이 열립니다</span>
+          </div>
+
+          <div class="space-y-2.5 font-serif">
+            <!-- Q1 -->
+            <div class="border border-neutral-900 bg-white">
+              <button onclick="toggleFaq('faq1')" class="w-full text-left p-3 flex justify-between items-center text-xs sm:text-sm font-bold text-neutral-950 font-sans">
+                <span>Q1. 초기 스타트업을 위한 규제 계도 기간과 컴퓨팅 지원은 어떻게 신청하나요?</span>
+                <i id="icon-faq1" data-lucide="plus" class="w-4 h-4 text-neutral-900 transition-transform"></i>
+              </button>
+              <div id="faq1" class="hidden p-3 pt-0 text-xs text-neutral-700 leading-relaxed border-t border-neutral-200">
+                기본법 시행 후 충분한 유예·계도 기간이 운영되며, 과학기술정보통신부 및 정보통신산업진흥원(NIPA) 포털을 통해 고성능 GPU 연산 바우처를 신청할 수 있습니다.
+              </div>
+            </div>
+
+            <!-- Q2 -->
+            <div class="border border-neutral-900 bg-white">
+              <button onclick="toggleFaq('faq2')" class="w-full text-left p-3 flex justify-between items-center text-xs sm:text-sm font-bold text-neutral-950 font-sans">
+                <span>Q2. 어떤 시스템이 '고영향 인공지능(High-Impact AI)'에 해당하나요?</span>
+                <i id="icon-faq2" data-lucide="plus" class="w-4 h-4 text-neutral-900 transition-transform"></i>
+              </button>
+              <div id="faq2" class="hidden p-3 pt-0 text-xs text-neutral-700 leading-relaxed border-t border-neutral-200">
+                의료 진단, 원자력·철도 등 핵심 기반시설 제어, 채용 심사, 대출 신용평가 등 국민의 생명·신체·기본권에 직결된 영역에 한정하여 이용자 고지 및 사전 검증 의무가 부과됩니다.
+              </div>
+            </div>
+
+            <!-- Q3 -->
+            <div class="border border-neutral-900 bg-white">
+              <button onclick="toggleFaq('faq3')" class="w-full text-left p-3 flex justify-between items-center text-xs sm:text-sm font-bold text-neutral-950 font-sans">
+                <span>Q3. 생성형 AI 워터마크 표시 의무화 기준은 무엇인가요?</span>
+                <i id="icon-faq3" data-lucide="plus" class="w-4 h-4 text-neutral-900 transition-transform"></i>
+              </button>
+              <div id="faq3" class="hidden p-3 pt-0 text-xs text-neutral-700 leading-relaxed border-t border-neutral-200">
+                AI로 생성·편집된 이미지, 영상, 음성 콘텐츠에 대해 사람이 식별할 수 있는 시각적 워터마크 또는 기계가 판독할 수 있는 디지털 메타데이터를 삽입해야 합니다.
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= SUBSCRIPTION BANNER ================= -->
+    <section class="py-5 text-center my-4 bg-[#F2EDE5] border border-neutral-900 p-5">
+      <h4 class="font-serif font-black text-lg text-neutral-950 mb-1">
+        대한민국 AI 정책 소식 정기 배달
+      </h4>
+      <p class="text-xs text-neutral-700 font-serif mb-3">
+        국가 R&D 지원사업 공고, 컴퓨팅 파워 지원 신청, 법령 가이드라인 개정본을 가장 빠르게 전달해 드립니다.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-2 justify-center max-w-md mx-auto">
+        <input type="email" placeholder="귀하의 이메일 주소를 입력하십시오" class="px-3 py-2 text-xs bg-white border border-neutral-900 focus:outline-none focus:ring-1 focus:ring-neutral-950 flex-1 font-sans">
+        <button onclick="alert('대한민국 AI 정책 일보 구독 신청이 완료되었습니다.')" class="px-5 py-2 text-xs font-bold font-sans bg-neutral-900 text-white hover:bg-neutral-800 transition">
+          구독 신청
+        </button>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="pt-4 border-t-2 border-neutral-900 flex flex-col sm:flex-row justify-between items-center text-[11px] font-sans text-neutral-600 gap-3">
+      <div>
+        <p class="font-bold text-neutral-900">大韓民國 人工知能日報 (THE KOREA AI CHRONICLE)</p>
+        <p class="text-neutral-500 mt-0.5">© 2026 Republic of Korea AI Policy Initiative. 이전 버전 아카이브: <a href="v2_newspaper.html" class="underline font-semibold hover:text-neutral-900">v2_newspaper.html</a></p>
+      </div>
+      <div class="flex gap-3 text-[11px] font-medium">
+        <a href="#headline" class="hover:underline">1면 머리기사</a>
+        <span>•</span>
+        <a href="#act" class="hover:underline">기본법 조항</a>
+        <span>•</span>
+        <a href="#pillars" class="hover:underline">5대 인프라</a>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Lucide Icon Init & Script -->
+  <script>
+    lucide.createIcons();
+
+    function toggleFaq(id) {
+      const content = document.getElementById(id);
+      const icon = document.getElementById('icon-' + id);
+      if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        icon.classList.add('rotate-45');
+      } else {
+        content.classList.add('hidden');
+        icon.classList.remove('rotate-45');
+      }
+    }
+  </script>
+</body>
+</html>
